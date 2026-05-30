@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Repo Analyzer</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>GitHub Repository Analyzer</h1>
+            <p>Get deep insights into any GitHub repository</p>
+        </header>
+
+        <section class="search-section">
+            <div class="search-box">
+                <input type="text" id="repoUrl" placeholder="https://github.com/owner/repo" />
+                <button id="analyzeBtn">Analyze</button>
+            </div>
+            <div id="loading" class="hidden">Analyzing...</div>
+            <div id="error" class="error hidden"></div>
+        </section>
+
+        <main id="dashboard" class="hidden">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="label">Health Score</span>
+                    <span id="healthScore" class="value">0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="label">Stars</span>
+                    <span id="stars" class="value">0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="label">Forks</span>
+                    <span id="forks" class="value">0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="label">Issues</span>
+                    <span id="issues" class="value">0</span>
+                </div>
+            </div>
+
+            <div class="charts-grid">
+                <div class="chart-container">
+                    <h3>Language Distribution</h3>
+                    <canvas id="languagesChart"></canvas>
+                </div>
+                <div class="info-container">
+                    <div class="header-with-action">
+                        <h3>Repository Details</h3>
+                        <button id="exportPdfBtn" class="secondary-btn hidden">Export PDF</button>
+                    </div>
+                    <p><strong>Name:</strong> <span id="repoName"></span></p>
+                    <p><strong>Owner:</strong> <span id="repoOwner"></span></p>
+                    <p><strong>Contributors:</strong> <span id="contributors"></span></p>
+                    <p id="repoDesc"></p>
+                </div>
+            </div>
+
+            <div class="contributors-section">
+                <h3>Top Contributors</h3>
+                <div id="contributorsList" class="contributors-grid">
+                    <!-- Contributors will be injected here -->
+                </div>
+            </div>
+        </main>
+
+        <section class="history-section">
+            <h2>Recent Analyses</h2>
+            <div id="historyList" class="history-list">
+                <!-- History items will be injected here -->
+            </div>
+        </section>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
