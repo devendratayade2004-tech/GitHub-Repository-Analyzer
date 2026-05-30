@@ -61,5 +61,4 @@ A full-stack web application to analyze GitHub repositories, providing insights 
    - Add `GITHUB_TOKEN` (optional) and `DATABASE_URL` (use a persistent disk or external DB for production history).
    - Note: Render's free tier has ephemeral storage. For persistent SQLite, use [Render Blueprints](https://render.com/docs/blueprints) with a Disk.
 
-## License
-MIT
+
